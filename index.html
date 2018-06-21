@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lab era</title>
+	
+	<link rel="stylesheet" href="css/login.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	<script>
+</script>
+</head>
+<body>
+<div class="container-fluid">
+	<div class="row log-frm" >
+		<div class="col-md-3 col-sm-12 offset-md-8" id="log-frm">
+			<a href="home.php"><label for="lab era" class="display-4">LAB ERA</label></a>
+			<form action="" class="form-group" name="log_frm" method="POST">
+				<table>
+					<tr>
+						<td><label for="username">Username</label></td>
+					</tr>
+					<tr>
+						<td><input type="text" name="username" class="form-control" size="30" required></td>
+					</tr>
+					<tr>
+						<td><label for="password">Password</label></td>
+					</tr>
+					<tr>
+						<td><input type="password" name="password" class="form-control" size="30" required></td>
+					</tr>
+
+					<tr>
+						<td>
+							<br>
+							<button name="log_btn" class="btn btn-success" onclick="log_test()">Login</button>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<br>Forgot password? <a href="#">Click Here</a></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+<style>
+body
+{
+	background-image: url("image/lab-img.jpg");
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;    
+}
+</style>

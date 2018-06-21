@@ -1,0 +1,69 @@
+body
+{
+	background-image: url("image/lab-img1.jpg");
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;    
+}
+td th
+{
+	border: 0px;
+}
+.log-frm
+{
+	margin-top: 8%;
+}
+#log-frm:hover
+{
+ 	box-shadow: 4px 4px 40px black;
+}
+#log-frm
+{
+	border-radius: 10px;
+=======
+body
+{
+	background-image: url("../image/lab-img.jpg");
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+td th
+{
+	border: 0px;
+}
+.log-frm
+{
+	margin-top: 8%;
+}
+#log-frm:hover
+{
+ 	box-shadow: 4px 4px 40px black;
+}
+#log-frm
+{
+	border-radius: 10px;
+body
+{
+	background-image: url("../image/lab-img.jpg");
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+td th
+{
+	border: 0px;
+}
+.log-frm
+{
+	margin-top: 8%;
+}
+#log-frm:hover
+{
+ 	box-shadow: 4px 4px 40px black;
+}
+#log-frm
+{
+	border-radius: 10px;
+}
