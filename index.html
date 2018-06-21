@@ -10,51 +10,83 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 	<script>
-</script>
+	</script>
 </head>
 <body>
-<div class="container-fluid">
-	<div class="row log-frm" >
-		<div class="col-md-3 col-sm-12 offset-md-8" id="log-frm">
-			<a href="home.php"><label for="lab era" class="display-4">LAB ERA</label></a>
-			<form action="" class="form-group" name="log_frm" method="POST">
-				<table>
-					<tr>
-						<td><label for="username">Username</label></td>
-					</tr>
-					<tr>
-						<td><input type="text" name="username" class="form-control" size="30" required></td>
-					</tr>
-					<tr>
-						<td><label for="password">Password</label></td>
-					</tr>
-					<tr>
-						<td><input type="password" name="password" class="form-control" size="30" required></td>
-					</tr>
+	<div class="container-fluid">
+		<div class="row log-frm" >
+			<div class="col-md-3 col-sm-12 offset-md-8" id="log-frm">
+				<a href="home.php"><label for="lab era" class="display-4">LAB ERA</label></a>
+				<form action="" class="form-group" name="log_frm" id="log_form" method="POST">
+					<table>
+						<tr>
+							<td><label for="username">Username</label></td>
+						</tr>
+						<tr>
+							<td><input type="text" id="username" class="form-control" size="30" required></td>
+						</tr>
+						<tr>
+							<td><label for="password">Password</label></td>
+						</tr>
+						<tr>
+							<td><input type="password" id="password" class="form-control" size="30" required></td>
+						</tr>
 
-					<tr>
-						<td>
-							<br>
-							<button name="log_btn" class="btn btn-success" onclick="log_test()">Login</button>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<br>Forgot password? <a href="#">Click Here</a></td>
-					</tr>
-				</table>
-			</form>
+						<tr>
+							<td>
+								<br>
+								<button name="log_btn" class="btn btn-success">Login</button>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<br>Forgot password? <a href="#">Click Here</a></td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
 		</div>
-	</div>
-</div>
-</body>
-<style>
-body
-{
-	background-image: url("image/lab-img.jpg");
-	background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;    
-}
+		<script type="text/javascript">
+			(function($){
+				function processForm( e ){
+					$.ajax({
+						url: 'http://labera.cfapps.io/login',
+						dataType: 'json',
+						type: 'post',
+						contentType: 'application/json',
+						headers: {
+							'Content-Type':'application/json'
+						},
+						data: JSON.stringify( {"user_name":$('#username').val(),"password":$('#password').val()} ),
+						processData: false,
+						success: function( data, textStatus, jQxhr ){
+							var response = data  ;
+							//var response = JSON.parse(data);
+							//alert(response.response);
+							if(response["response message"]=="User exists")
+							{
+								window.location.href = "home.html";
+							}
+						},
+						error: function( jqXhr, textStatus, errorThrown ){
+							console.log( errorThrown );
+						}
+					});
+					e.preventDefault();
+				}
+
+				$('#log_form').submit( processForm );
+			})(jQuery);
+		</script>
+	</body>
+	<style>
+	body
+	{
+		background-image: url("image/lab-img.jpg");
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: cover;
+		background-position: center;    
+	}
 </style>
