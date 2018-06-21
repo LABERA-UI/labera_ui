@@ -68,6 +68,10 @@
 							{
 								window.location.href = "home.html";
 							}
+							else if(response["response message"]=="User and/or password are incorrect")
+							{
+								alert("Wrong username/password");
+							}
 						},
 						error: function( jqXhr, textStatus, errorThrown ){
 							console.log( errorThrown );
