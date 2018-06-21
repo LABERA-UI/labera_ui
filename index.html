@@ -66,7 +66,7 @@
 							//alert(response.response);
 							if(response["response message"]=="User exists")
 							{
-								window.location.href = "home.html";
+								window.location.replace("home.html");
 							}
 							else if(response["response message"]=="User and/or password are incorrect")
 							{
