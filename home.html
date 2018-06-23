@@ -9,14 +9,27 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/home.css">
+  <script>
+  
+  function checkUser(){
+    if (!localStorage.getItem("user_id")) {
+      window.location.replace("index.html");
+    } 
+    else {
+      var user_id=localStorage.user_id;
+      var user_name=localStorage.user_name;
+      var branch=localStorage.branch;
+    }
+  };
+  </script>
 </head>
-<body style="background-color: black;">
+<body onload="checkUser()" style="background-color: black;">
 
 <!-- header of the site -->
 
 <div class="container-fluid" id="navbar" style="background-color: rgba(23, 32, 42,0.8);">
   <span style="color: white;font-family: Agency FB;" class="display-4">Lab Era</span>
-     <img src="image/user_p.png" class="rounded-circle" style="height: 50px;float: right;margin-top: 10px;" alt="">
+     <img src="image/user_p.png" class="rounded-circle" style="height: 50px;float: right;margin-top: 10px;" alt="" onclick="window.location.href = 'logout.html' ">
 </div>
 
 <!-- body of the site -->
