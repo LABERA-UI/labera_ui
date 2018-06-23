@@ -17,32 +17,18 @@
 			<div class="col-md-3 col-sm-12 offset-md-8" id="log-frm">
 				<a href="home.php"><label for="lab era" class="display-4">LAB ERA</label></a>
 				<form action="" class="form-group" name="log_frm" id="log_form" method="POST">
-					<table>
-						<tr>
-							<td><label for="username">Username</label></td>
-						</tr>
-						<tr>
-							<td><input type="text" id="username" class="form-control" size="30" required></td>
-						</tr>
-						<tr>
-							<td><label for="password">Password</label></td>
-						</tr>
-						<tr>
-							<td><input type="password" id="password" class="form-control" size="30" required></td>
-						</tr>
-
-						<tr>
-							<td>
+							<label for="username">Username</label>
+							<input type="text" id="username" class="form-control" size="30" required>
+							<label for="password">Password</label>
+							<input type="password" id="password" class="form-control" size="30" required>
+								<input type="checkbox"> Remember me
 								<br>
+								<div id="wrng_up" style="color: red"></div>
 								<button name="log_btn" class="btn btn-success">Login</button>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<br>Forgot password? <a href="#">Click Here</a></td>
-							</tr>
-						</table>
+								<br>
+								<p class="bold">Forgot password?<a href="#" class="link"> Click Here</a></p>
 					</form>
+
 				</div>
 			</div>
 		</div>
@@ -78,7 +64,7 @@
 							}
 							else if(response["response message"]=="User and/or password are incorrect")
 							{
-								alert("Wrong username/password");
+								alert("Wrong username/password.");
 							}
 						},
 						error: function( jqXHR, exception, textStatus, errorThrown ){
@@ -118,5 +104,23 @@
 		background-attachment: fixed;
 		background-size: cover;
 		background-position: center;    
+	}
+	a.link:active
+	{
+		color:black;
+		text-decoration-color: black;
+	}
+	a.link
+	{
+		color:black;
+		text-decoration-color: black;
+	}
+	a.link
+	{
+		color: red;	
+	}
+	.bold
+	{
+		font-weight: bold;
 	}
 </style>
