@@ -62,21 +62,17 @@
 						processData: false,
 						success: function( data, textStatus, jQxhr ){
 							var response = data  ;
-							//var response = JSON.parse(data);
-							//alert(response.response);
 							if(response["response message"]=="User exists")
 							{
 								if (typeof(Storage) !== "undefined") {
-    							localStorage.setItem('user_id',response.user.user_id);
-    							localStorage.setItem('user_name',response.user.user_name);
-    							localStorage.setItem('password',response.user.password);
-    							localStorage.setItem('branch',response.user.branch);
-
-								alert(localStorage.user_id+localStorage.user_name+localStorage.password+localStorage.branch);
+									localStorage.setItem('user_id',response.user.user_id);
+									localStorage.setItem('user_name',response.user.user_name);
+									localStorage.setItem('password',response.user.password);
+									localStorage.setItem('branch',response.user.branch);
 								} 
 								else {
-    							alert("No browser support");
-    							}
+									alert("No browser support");
+								}
 								
 								
 								window.location.replace("home.html");
@@ -86,8 +82,26 @@
 								alert("Wrong username/password");
 							}
 						},
-						error: function( jqXhr, textStatus, errorThrown ){
+						error: function( jqXHR, exception, textStatus, errorThrown ){
 							console.log( errorThrown );
+							var msg = '';
+							if (jqXHR.status === 0) {
+								msg = 'Not connected. Verify Network.';
+							} else if (jqXHR.status == 404) {
+								msg = 'Requested page not found. [404]';
+							} else if (jqXHR.status == 500) {
+								msg = 'Internal Server Error [500].';
+							} else if (exception === 'parsererror') {
+								msg = 'Requested JSON parse failed.';
+							} else if (exception === 'timeout') {
+								msg = 'Time out error.';
+							} else if (exception === 'abort') {
+								msg = 'Ajax request aborted.';
+							} else {
+								msg = 'Uncaught Error.\n' + jqXHR.responseText;
+							}
+							alert(msg);
+
 						}
 					});
 					e.preventDefault();
