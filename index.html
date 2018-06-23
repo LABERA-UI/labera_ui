@@ -66,6 +66,19 @@
 							//alert(response.response);
 							if(response["response message"]=="User exists")
 							{
+								if (typeof(Storage) !== "undefined") {
+    							localStorage.setItem('user_id',response.user.user_id);
+    							localStorage.setItem('user_name',response.user.user_name);
+    							localStorage.setItem('password',response.user.password);
+    							localStorage.setItem('branch',response.user.branch);
+
+								alert(localStorage.user_id+localStorage.user_name+localStorage.password+localStorage.branch);
+								} 
+								else {
+    							alert("No browser support");
+    							}
+								
+								
 								window.location.replace("home.html");
 							}
 							else if(response["response message"]=="User and/or password are incorrect")
