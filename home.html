@@ -9,13 +9,15 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/home.css">
+  <link rel="icon" href="image/logo3.png">
   <script>
-  
-  function checkUser(){
-    if (!localStorage.getItem("user_id")) {
+  function checkUser(){    
+    if (!localStorage.getItem("user_id")) 
+    {      
       window.location.replace("index.html");
     } 
     else {
+      check=1;
       var user_id=localStorage.user_id;
       var user_name=localStorage.user_name;
       var branch=localStorage.branch;
@@ -23,14 +25,20 @@
   };
   </script>
 </head>
-<body onload="checkUser()" style="background-color: black;">
+<body onload="" style="background-color: black;">
 
 <!-- header of the site -->
-
 <div class="container-fluid" id="navbar" style="background-color: rgba(23, 32, 42,0.8);">
-  <span style="color: white;font-family: Agency FB;" class="display-4">Lab Era</span>
+  <span style="color: white;font-family: Agency FB;" class="display-4">
+  <img src="image/logo3.png" alt="" style="margin-bottom: 10px;"><a href="home.html" style="text-decoration: none;color: white;">Lab Era</a>
+  </span>
      <img src="image/user_p.png" class="rounded-circle" style="height: 50px;float: right;margin-top: 10px;" alt="" onclick="window.location.href = 'logout.html' ">
 </div>
+
+<!-- <div class="container-fluid" id="navbar" style="background-color: rgba(23, 32, 42,0.8);">
+  <span style="color: white;font-family: Agency FB;" class="display-4">Lab Era</span>
+     <img src="image/user_p.png" class="rounded-circle" style="height: 50px;float: right;margin-top: 10px;" alt="" onclick="window.location.href = 'logout.html' ">
+</div> -->
 
 <!-- body of the site -->
 <div>
@@ -40,12 +48,16 @@
 
   <div class="row" id="sec-1">
         <div class="col-xl-3 col-md-3 col-sm-12 col-xs-12 offset-xl-1 offset-md-1 item-sec">
-          <a href="registration.html" style="text-decoration:none;"><img src="image/heart.png" class="img-responsive round" alt="">
-          <span class="option">&nbsp;&nbsp;Registration</span></a>
+          <a href="registration.html" style="text-decoration:none;">
+            <img src="image/heart.png" class="img-responsive round" alt="">
+            <span class="option">&nbsp;&nbsp;Registration</span>
+          </a>
         </div>      
       <div class="col-xl-3 col-md-3 col-sm-12 col-xs-12  item-sec">
-        <img src="image/heart.png" class="img-responsive round" alt="">
-        <span class="option">&nbsp;&nbsp;Tests&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <a href="lab_test.html" style="text-decoration: none;">
+          <img src="image/heart.png" class="img-responsive round" alt="">
+            <span class="option">&nbsp;&nbsp;Tests&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </a>
       </div>
       <div class="col-xl-3 col-md-3 col-sm-12 col-xs-12  item-sec">
         <img src="image/heart.png" class="img-responsive round" alt="">
@@ -74,7 +86,8 @@
 </html>
 <style>
 body{
-    background-image: url("image/back-img.png");
+  background-image: url("image/doctor.jpg");
+    /*background-image: url("image/back-img.png");*/
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
