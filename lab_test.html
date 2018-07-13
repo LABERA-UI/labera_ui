@@ -17,7 +17,13 @@
 <span style="color: white;font-family: Agency FB;" class="display-4">
 <img src="image/logo3.png" alt="" style="margin-bottom: 10px;"><a href="home.html" style="color: white;text-decoration: none;">Lab Era</a>
 </span>
-<img src="image/user_p.png" class="rounded-circle" style="height: 50px;float: right;margin-top: 10px;" alt="">
+<span class="dropdown">
+      <img src="image/user_p.png" class="rounded-circle" style="height: 50px;float: right;margin-top: 10px;" alt="user_logo">
+      <div class="dropdown-content" style="float: right;margin-top: 60px;">
+        <a href="register_new.html">Add new user</a>
+        <a href="logout.html">Logout</a>
+      </div>
+      </span>
 </div>
 
 <div class="container-fluid">
@@ -130,4 +136,38 @@
     background-repeat: no-repeat;   
     font-family: 'Source Sans Pro', sans-serif;
   }*/
+  .dropdown
+{
+  display: inline-block;
+  position: relative;
+  float: right;
+  /*margin-right: 100px;*/
+}
+.dropdown-content
+{
+  font-family: Agency FB;
+  display: none;
+  position: absolute;
+  min-width: 160px; 
+  margin-left: -100px; 
+  background-color: white;  
+  z-index: 1;
+}
+.dropdown-content a
+{
+  padding: 5px;
+  font-size: 20px;
+  display: block;
+  text-decoration: none;
+}
+.dropdown-content a:hover
+{
+  background-color: black;
+  color: white;
+  text-decoration: none;
+}
+.dropdown:hover .dropdown-content
+{
+  display: block;  
+}
 </style>

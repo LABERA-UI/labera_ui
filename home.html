@@ -30,9 +30,16 @@
 <!-- header of the site -->
 <div class="container-fluid" id="navbar" style="background-color: rgba(23, 32, 42,0.8);">
   <span style="color: white;font-family: Agency FB;" class="display-4">
-  <img src="image/logo3.png" alt="" style="margin-bottom: 10px;"><a href="home.html" style="text-decoration: none;color: white;">Lab Era</a>
-  </span>
-     <img src="image/user_p.png" class="rounded-circle" style="height: 50px;float: right;margin-top: 10px;" alt="" onclick="window.location.href = 'logout.html' ">
+    <img src="image/logo3.png" alt="" style="margin-bottom: 10px;"><a href="home.html" style="text-decoration: none;color: white;">Lab Era</a>    
+  </span >
+     <span class="dropdown">
+      <img src="image/user_p.png" class="rounded-circle" style="height: 50px;float: right;margin-top: 10px;" alt="user_logo">
+      <div class="dropdown-content" style="float: right;margin-top: 60px;">
+        <a href="register_new.html">Add new user</a>
+        <a href="logout.html">Logout</a>
+      </div>
+      </span>
+
 </div>
 
 <!-- <div class="container-fluid" id="navbar" style="background-color: rgba(23, 32, 42,0.8);">
@@ -79,7 +86,7 @@
       <div class="col-xl-3 col-md-3 col-sm-12 col-xs-12 item-sec">
         <img src="image/heart.png" class="img-responsive round" alt="">
         <span class="option">&nbsp;&nbsp;Branch&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-      </div>
+      </div>          
   </div>
 </div>
 </body>
@@ -94,5 +101,38 @@ body{
     background-repeat: no-repeat;
     font-family: Agency FB;
   }
+.dropdown
+{
+  display: inline-block;
+  position: relative;
+  float: right;
+  /*margin-right: 100px;*/
+}
+.dropdown-content
+{
+  display: none;
+  position: absolute;
+  min-width: 160px; 
+  margin-left: -100px; 
+  background-color: white;  
+  z-index: 1;
+}
+.dropdown-content a
+{
+  padding: 5px;
+  font-size: 20px;
+  display: block;
+  text-decoration: none;
+}
+.dropdown-content a:hover
+{
+  background-color: black;
+  color: white;
+  text-decoration: none;
+}
+.dropdown:hover .dropdown-content
+{
+  display: block;  
+}
 
 </style>
