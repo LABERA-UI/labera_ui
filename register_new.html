@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Registration</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="http://allfont.net/allfont.css?fonts=agency-fb" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="icon" href="image/logo3.png">
+  <script>
+    $(document).ready(function () 
+    {
+  //called when key is pressed in textbox
+      $("#quantity").keypress(function (e) 
+        {
+          //if the letter is not digit then display error and don't type anything
+          if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) 
+          {
+            //display error message
+            $("#errmsg").html("*Please enter number only").show();
+               return false;
+          }
+          else if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which < 57)) 
+          {
+            $("#errmsg").fadeOut("slow");
+          }
+        });
+    });
+  </script>
+</head>
+<body style="background-color: black;">
+
+<!-- header of the site -->
+
+<div class="container-fluid" id="navbar" style="background-color: rgba(23, 32, 42,0.8);">
+  <span style="color: white;font-family: Agency FB;" class="display-4">
+  <img src="image/logo3.png" alt="" style="margin-bottom: 10px;"><a href="home.html" style="color: white;text-decoration: none;">Lab Era</a>
+  </span>
+     <span class="dropdown">
+      <img src="image/user_p.png" class="rounded-circle" style="height: 50px;float: right;margin-top: 10px;" alt="user_logo">
+      <div class="dropdown-content" style="float: right;margin-top: 60px;">
+        <a href="register_new.html">Add new user</a>
+        <a href="logout.html">Logout</a>
+      </div>
+      </span>
+</div>
+
+<!-- body of the site -->
+
+<div class="container item_container2">
+  <div style="background-color: red;width: 30px;height: 30px ;border-radius: 20px;" class="float-right" >
+    <a href="home.html" style="text-decoration:none;"><p class="text-center" style="color: white;">&times</p></a>    
+  </div>
+
+  <!-- 1st link of links or options -->
+<h6 class="display-4 text-center">ADD NEW EMPLOYEE</h6>
+  <div class="row" id="sec-1">
+
+      <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 offset-xl-2 offset-md-2">
+        <form action="#" method="POST" class="form-group">
+          <label for="fname">Full Name</label>
+        <input type="text" class="form-control uppercase" placeholder="Enter your First Name" required>
+        <label for="email">Email</label>
+        <input type="email" class="form-control uppercase" placeholder="Enter your Valid Email Id" required>              
+        <label for="dob">Age</label>
+        <input type="text" class="form-control" placeholder="Enter your Date Of Birth" required>
+        <label for="dob" style="margin-top: 15px;">Address</label>
+        <input type="text" class="form-control" placeholder="Enter your Address" required>
+      </div>
+
+      <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12">        
+        <label for="lname">Designation</label>
+        <input type="lname" class="form-control uppercase" placeholder="Enter your Name" required="">
+        <label for="phone number">Phone Number</label>
+        <input type="text" class="form-control uppercase" name="quantity" id="quantity" placeholder="Enter Your Phone number" required> 
+        <span id="errmsg"></span>        
+        <br>
+        Gender
+        <br>
+        <input type="radio" name="gender" checked> Male
+        &nbsp;&nbsp;
+        <input type="radio" name="gender"> Femail
+        &nbsp;&nbsp;
+        <input type="radio" name="gender"> Other        
+        <br>
+        <label for="lname">Employee id</label>
+        <input type="lname" class="form-control uppercase" disabled="" placeholder="your emp_id">
+      </div>
+  </div>  
+      <div class="row">
+        
+        <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 offset-xl-2 offset-md-2">            
+          <input id="s-btn" type="submit" name="submit" value="Submit" class="btn btn-outline-light">
+          </form>
+        </div>
+      </div>  
+</div>
+</body>
+</html>
+<style>
+body{  
+    background-image: url("image/doctor.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;       
+    /*font-family: 'Source Sans Pro', sans-serif;*/
+  }
+  #s-btn
+  {
+    padding: 5px 30px 5px 30px;        
+    margin-top: 15px; 
+  }
+  #s-btn:hover
+  {
+    width: 150px;
+  }
+  #errmsg
+{
+color: red;
+font-size: 20px;
+}
+.item_container2
+{
+  height: 100%;
+  margin-top:20px;
+  /*padding-left: 150px;*/  
+  /*box-shadow: 8px 8px 10px black;*/
+  background-color: rgba(39, 55, 70,0.8);
+  font-size: 20px;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.dropdown
+{
+  display: inline-block;
+  position: relative;
+  float: right;
+  /*margin-right: 100px;*/
+}
+.dropdown-content
+{
+  font-family: Agency FB;
+  display: none;
+  position: absolute;
+  min-width: 160px; 
+  margin-left: -100px; 
+  background-color: white;  
+  z-index: 1;
+}
+.dropdown-content a
+{
+  padding: 5px;
+  font-size: 20px;
+  display: block;
+  text-decoration: none;
+}
+.dropdown-content a:hover
+{
+  background-color: black;
+  color: white;
+  text-decoration: none;
+}
+.dropdown:hover .dropdown-content
+{
+  display: block;  
+}
+
+</style>
