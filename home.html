@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Home</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1">   -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
   <link href="http://allfont.net/allfont.css?fonts=agency-fb" rel="stylesheet" type="text/css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -39,7 +40,6 @@
         <a href="logout.html">Logout</a>
       </div>
       </span>
-
 </div>
 
 <!-- <div class="container-fluid" id="navbar" style="background-color: rgba(23, 32, 42,0.8);">
@@ -57,18 +57,18 @@
         <div class="col-xl-3 col-md-3 col-sm-12 col-xs-12 offset-xl-1 offset-md-1 item-sec">
           <a href="registration.html" style="text-decoration:none;">
             <img src="image/heart.png" class="img-responsive round" alt="">
-            <span class="option">&nbsp;&nbsp;Registration</span>
+            <span class="option">Registration</span>
           </a>
         </div>      
       <div class="col-xl-3 col-md-3 col-sm-12 col-xs-12  item-sec">
         <a href="lab_test.html" style="text-decoration: none;">
           <img src="image/heart.png" class="img-responsive round" alt="">
-            <span class="option">&nbsp;&nbsp;Tests&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span class="option">Tests</span>
             </a>
       </div>
       <div class="col-xl-3 col-md-3 col-sm-12 col-xs-12  item-sec">
         <img src="image/heart.png" class="img-responsive round" alt="">
-        <span class="option">&nbsp;&nbsp;Results&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>
+        <span class="option">Results<span>
       </div>
   </div>
 
@@ -77,30 +77,31 @@
   <div class="row" id="sec-2">
       <div class="col-xl-3 col-md-3 col-sm-12 col-xs-12 offset-xl-1 offset-md-1 item-sec">
         <img src="image/heart.png" class="img-responsive round" alt="">
-        <span class="option">&nbsp;&nbsp;Reports&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span class="option">Reports</span>
       </div>
       <div class="col-xl-3 col-md-3 col-sm-12 col-xs-12 item-sec">
         <img src="image/heart.png" class="img-responsive round" alt="">
-        <span class="option">&nbsp;&nbsp;Billing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>
+        <span class="option">Billing<span>
       </div>
       <div class="col-xl-3 col-md-3 col-sm-12 col-xs-12 item-sec">
         <img src="image/heart.png" class="img-responsive round" alt="">
-        <span class="option">&nbsp;&nbsp;Branch&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span class="option">Branch</span>
       </div>          
   </div>
 </div>
 </body>
 </html>
 <style>
-body{
-  background-image: url("image/doctor.jpg");
-    /*background-image: url("image/back-img.png");*/
+
+html,body {
+    background: url("image/doctor.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    font-family: Agency FB;
-  }
+    height: 100%;
+    overflow: hidden;
+} 
 .dropdown
 {
   display: inline-block;
