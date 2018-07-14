@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Home</title>
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1">   -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
   <link href="http://allfont.net/allfont.css?fonts=agency-fb" rel="stylesheet" type="text/css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -53,7 +53,7 @@
 
   <!-- 1st link of links or options -->
 
-  <div class="row" id="sec-1">
+  <div class="row">  <!-- id="sec-1" -->
         <div class="col-xl-3 col-md-3 col-sm-12 col-xs-12 offset-xl-1 offset-md-1 item-sec">
           <a href="registration.html" style="text-decoration:none;">
             <img src="image/heart.png" class="img-responsive round" alt="">
@@ -70,11 +70,6 @@
         <img src="image/heart.png" class="img-responsive round" alt="">
         <span class="option">Results<span>
       </div>
-  </div>
-
-  <!-- 2nd link of links -->
-
-  <div class="row" id="sec-2">
       <div class="col-xl-3 col-md-3 col-sm-12 col-xs-12 offset-xl-1 offset-md-1 item-sec">
         <img src="image/heart.png" class="img-responsive round" alt="">
         <span class="option">Reports</span>
@@ -88,19 +83,40 @@
         <span class="option">Branch</span>
       </div>          
   </div>
+
+  <!-- 2nd link of links -->
+
+  <div class="row" > <!-- id="sec-2" -->
+      <!-- <div class="col-xl-3 col-md-3 col-sm-12 col-xs-12 offset-xl-1 offset-md-1 item-sec">
+        <img src="image/heart.png" class="img-responsive round" alt="">
+        <span class="option">Reports</span>
+      </div>
+      <div class="col-xl-3 col-md-3 col-sm-12 col-xs-12 item-sec">
+        <img src="image/heart.png" class="img-responsive round" alt="">
+        <span class="option">Billing<span>
+      </div>
+      <div class="col-xl-3 col-md-3 col-sm-12 col-xs-12 item-sec">
+        <img src="image/heart.png" class="img-responsive round" alt="">
+        <span class="option">Branch</span>
+      </div>           -->
+  </div>
 </div>
 </body>
 </html>
 <style>
 
-html,body {
-    background: url("image/doctor.jpg") no-repeat center center fixed;
+body {
+    background: url("image/doctor.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     height: 100%;
-    overflow: hidden;
+    /*overflow: hidden;*/
+    font-family: Agency FB;
 } 
 .dropdown
 {
