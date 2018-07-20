@@ -11,6 +11,26 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link rel="stylesheet" href="css/home.css">
   <link rel="icon" href="image/logo3.png">
+  <script>
+  	$(document).ready(function()
+	{
+		$("#myform").change(function()
+		{
+			var selectedoptions = $("#myform option:selected");
+			if (selectedoptions.length > 0) 
+			{
+				var count = 0;
+				var resultstring = '';
+				selectedoptions.each(function()
+				{
+					count++;
+					resultstring += "<tr><td>" + count + "</td><td>" + $(this).text() + "</td></tr>";
+				});
+				$("#result").html(resultstring);
+			}
+		});
+	});
+  </script>
 </head>
 <body>
 <div class="container-fluid" id="navbar" style="background-color: rgba(23, 32, 42,0.8);">
@@ -49,18 +69,23 @@
 		<br>
 		<div class="row">
 			<div class="col-xl-9 col-md-9 col-sm-12 col-xs-12" style="overflow-x: auto;overflow-y: auto;height: 300px;">
-				<table class="table table-striped table-hover table-bordered tab;e-responsive" >
+				<table class="table table-striped table-hover table-bordered tab;e-responsive">
+					<thead>
 					<tr>
-						<td>Sl.No</td>
-						<td>Test Name</td>
-						<td>Test ID</td>
-						<td>Amount</td>
-						<td>Remark</td>
-					</tr>					
-				</table>				
+						<th>Sl.No</th>
+						<th>Test Name</th>
+						<th>Test ID</th>
+						<th>Amount</th>
+						<th>Remark</th>
+					</tr>	
+					</thead>
+					<tbody id="result">
+
+					</tbody>			
+				</table>								
 			</div>
 			<div class="col-xl-3 colmd-3 col-sm-12 col-xs-12">
-				<select name="" id="" class="form-control">
+				<select name="" id="myform2" class="form-control">
 					<option value="a">A</option>
 					<option value="b">B</option>
 					<option value="c">C</option>
@@ -69,24 +94,12 @@
 				<br>
 				<label for="test_list">TEST LIST</label>
 				<div style="max-height: 180px;min-height: auto;overflow-y: auto;overflow-x:auto;  padding-left: 10px;" class="border">
-					<input type="checkbox">A <br>
-					<input type="checkbox">A <br>
-					<input type="checkbox">A <br>
-					<input type="checkbox">A <br>
-					<input type="checkbox">A <br>
-					<input type="checkbox">A <br>
-					<input type="checkbox">A <br>
-					<input type="checkbox">A <br>
-					<input type="checkbox">A <br>
-					<input type="checkbox">A <br>
-					<input type="checkbox">A <br>
-					<input type="checkbox">A <br>
-					<input type="checkbox">A <br>
-					<input type="checkbox">A <br>
-					<input type="checkbox">A <br>
-					<input type="checkbox">A <br>
-				</div>
-				<button class="btn btn-primary mx-auto d-block">SELECT</button>
+					<select name="" id="myform" multiple="multiple" style="width: 100%;border: none;">
+						<option value="abcd">abcd</option>
+						<option value="css">css</option>
+						<option value="c++">c++ lang</option>
+					</select>
+				</div>				
 			</div>
 		</div>
 		<div class="row" style="margin-top: 12px;">
