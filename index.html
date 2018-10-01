@@ -84,7 +84,7 @@
 							}
 							else if(response["response message"]=="User and/or password are incorrect")
 							{
-								alert("Wrong username/password.");
+								document.getElementById("wrong").innerHTML= "Wrong username and password";
 							}
 						},
 						error: function( jqXHR, exception, textStatus, errorThrown ){

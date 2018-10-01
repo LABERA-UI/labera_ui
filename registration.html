@@ -9,9 +9,28 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+ <!--  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>  
+
+      <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>  
+
+
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link rel="stylesheet" href="css/home.css">
   <link rel="icon" href="image/logo3.png">
+  <script>  
+         var mainApp = angular.module("mainApp", []);  
+         mainApp.controller('studentController', function($scope) {  
+            $scope.reset = function(){  
+               $scope.fname = "";  
+               $scope.lname = "";  
+               $scope.email = "";  
+            }  
+             $scope.reset();  
+         });  
+      </script>  
   <script>
     $(document).ready(function () 
     {
@@ -30,8 +49,14 @@
             $("#errmsg").fadeOut("slow");
           }
         });
+
+      $
     });
+
+ 
+
   </script>
+  
 </head>
 <body style="background-color: black;">
 
@@ -59,42 +84,59 @@
 
   <!-- 1st link of links or options -->
 <h6 class="display-4 text-center">Registration Page</h6>
-  <div class="row" id="sec-1">
+  <div class="row" id="sec-1" ng-app = "mainApp" ng-controller = "studentController">
 
       <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 offset-xl-2 offset-md-2">
-        <form action="#" method="POST" class="form-group">
-          <label for="fname">First Name</label>
-        <input type="text" class="form-control uppercase" placeholder="Enter your First Name" required>
-        <label for="email">Email</label>
-        <input type="email" class="form-control uppercase" placeholder="Enter your Valid Email Id" required>              
-        <label for="dob">Age</label>
-        <input type="text" class="form-control" placeholder="Enter your Date Of Birth" required>
-        <label for="dob">Address</label>
-        <textarea name="" id="" cols="30" rows="4" class="form-control" placeholder="Enter Address"></textarea>
-        
+            <form action="#" method="POST" class="form-group" name="register" novalidate="">
+            <label for="fname">First Name</label>
+            <input type="text" class="form-control uppercase"  placeholder="Enter your First Name" name="fname" ng-model="fname" required="" >
+            <span style = "color:red" ng-show = "register.fname.$touched && register.fname.$invalid">  
+            <span ng-show = "register.fname.$error.required">First Name is required.</span> </span><br> 
+
+            <label for="email">Email</label>
+            <input type="email" class="form-control uppercase" placeholder="Enter your Valid Email Id" name="email" ng-model="email" required>
+            <span style = "color:red" ng-show = "register.email.$touched && register.email.$invalid">  
+            <span ng-show = "register.email.$error.required">Email is required.</span>  
+            <span ng-show = "register.email.$error.email">Invalid email address.</span>  
+            </span>         <label for="dob">Age</label>
+            <input type="text" class="form-control" placeholder="Enter your Date Of Birth" ng-model="age" name="age" required>
+            <span style="color: red" ng-show="register.age.$touched && register.age.$invalid" >DOB is required</span><br>
+            <label for="dob">Address</label>
+            <textarea name="myAddress" id="" cols="30" rows="4" class="form-control" name="myAddress" ng-model="myAddress" required="" placeholder="Enter Address"></textarea>
+            <span style="color: red" ng-show="register.myAddress.$touched && register.myAddress.$invalid">Address is required.</span>
       </div>
 
-      <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12">        
-          <label for="lname">Last Name</label>
-        <input type="lname" class="form-control uppercase" placeholder="Enter your Name" required="">
-        <label for="phone number">Phone Number</label>
-        <input type="text" class="form-control uppercase" name="quantity" id="quantity" placeholder="Enter Your Phone number" required>        
-        <span id="errmsg"></span>
-        <br>
-        Gender
-        <br>
-        <input type="radio" name="gender" checked> Male
-        &nbsp;&nbsp;
-        <input type="radio" name="gender"> Femail
-        &nbsp;&nbsp;
-        <input type="radio" name="gender"> Other
-        <br>
-      </div>
-  </div>  
+      <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12"> 
+            <label for="lname">Last Name</label>
+            <input type="text" class="form-control uppercase" placeholder="Enter your Last Name"  name="lname" ng-model="lname" required="">
+            <span style = "color:red" ng-show = "register.lname.$touched && register.lname.$invalid">  
+            <span ng-show = "register.lname.$error.required">Last Name is required.</span>  
+            </span>       
+
+
+            <label for="phone number">Phone Number</label>
+            <input type="text" class="form-control uppercase" name="quantity" id="quantity" ng-model="quantity" placeholder="Enter Your Phone number" required> 
+            <span style="color: red" ng-show="register.quantity.$touched && register.quantity.$invalid"> Phone number is   required</span>       
+            <span id="errmsg"></span>
+            <br>
+            Gender
+            <br>
+            <input type="radio" name="gender" checked> Male
+            &nbsp;&nbsp;
+            <input type="radio" name="gender"> Femail
+            &nbsp;&nbsp;
+            <input type="radio" name="gender"> Other
+            <br>
+            </div>
+            </div>  
       <div class="row">
         
         <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 offset-xl-2 offset-md-2">            
-          <input id="s-btn" type="submit" name="submit" value="Submit" class="btn btn-outline-light">
+<!--           <input id="s-btn" type="submit" name="submit" value="Submit" class="btn btn-outline-light">
+ -->          <button class="btn btn-primary" type="" ng-disabled = "register.fname.$dirty &&  
+                        register.fname.$invalid || register.lastname.$dirty &&  
+                        register.lastname.$invalid || register.email.$dirty &&  
+                        register.email.$invalid" ng-click="submit()">submit</button>
           </form>
         </div>
       </div>  
