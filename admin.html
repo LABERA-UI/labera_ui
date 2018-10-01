@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,17 +28,21 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Master
         </a>
+
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
         	<ul class="navbar-nav">
 		      <li class="nav-item dropdown dropright">
-		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          Lab Report
-		        </a>
-		        	<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-		          <a class="dropdown-item" href="#">Action</a>
-		          <a class="dropdown-item" href="#">Another action</a>
-		          <a class="dropdown-item" href="#">Something else here</a>
-		        </div>
+		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Lab Report</a>
+
+              <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Submenu</a></li>
+              <li><a class="dropdown-item" href="#">Submenu0</a></li>
+              <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Submenu 1</a>
+              <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Subsubmenu1</a></li>
+              <li><a class="dropdown-item" href="#">Subsubmenu1</a></li>
+              </ul>
+		        	
 		      </li>
 		     </ul>
           <!-- <a class="dropdown-item" href="#">Lab Report</a> -->
@@ -111,3 +116,21 @@
 
 </body>
 </html>
+<script>
+
+(function($){
+  $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+    if (!$(this).next().hasClass('show')) {
+    $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+    }
+    var $subMenu = $(this).next(".dropdown-menu");
+    $subMenu.toggleClass('show');
+
+    $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+    $('.dropdown-submenu .show').removeClass("show");
+    });
+
+    return false;
+  });
+})(jQuery)  
+</script>
